@@ -48,9 +48,9 @@
 	--primary-color			: #0B1030;
 	--secondary-color		: #F3F3FF;
 	--text-color			: #556171;
-	--accent-color			: #c92f31;
+	--accent-color			: #d52f30;
 	--accent-color-two		: #2f8082;
-	--white-color			: #f1f1f2;
+	--white-color			: #fefffe;
 	--divider-color			: #55617124;
 	--dark-divider-color	: #FFFFFF24;
 	--error-color			: rgb(230, 87, 87);
@@ -68,6 +68,13 @@ body{
 	line-height: 1.6em;
 	background: var(--white-color);
 	color: var(--text-color);
+}
+/* FAQ text visibility fix */
+.accordion-collapse {
+    visibility: visible !important;
+}
+.accordion-collapse.collapse.show {
+    display: block !important;
 }
 
 p{
@@ -300,7 +307,7 @@ body{
 }
 
 .bg-section{
-	background-color: var(--secondary-color);
+	background-color:#0b1030;
 	width: 100%;
 	max-width: 1820px;
 	margin: 0 auto;
@@ -373,9 +380,17 @@ body{
 	margin-bottom: 0;
 	cursor: none;
 }
+#myVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Yeh video ko bina stretch kiye poora area cover karne mein help karta hai */
+  
+  /* YAHI HAI AAPKA MAIN SOLUTION - Isse video neeche shift ho jayegi */
+  object-position: center 30%; 
+}
 
 .section-title h2{
-	font-size: 46px;
+	font-size: 45px;
 	font-weight: 600;
 	line-height: 1.1em;
 	letter-spacing: -0.02em;
@@ -461,7 +476,7 @@ body{
 }
 
 .topbar-contact-info ul li a:hover i{
-	color: var(--primary-color);
+	color: #d52f30;
 }
 
 .topbar-social-details{
@@ -503,7 +518,7 @@ body{
 }
 
 .topbar-social-icons ul li a:hover i{
-	color: var(--primary-color);
+	color:#d52f30;
 }
 
 header.main-header{
@@ -673,7 +688,7 @@ header.main-header .header-sticky.active{
 }
 
 .slicknav_btn{
-	background: linear-gradient(90deg, var(--accent-color) 0%, var(--accent-color-two) 100%);
+    background: linear-gradient(90deg, var(--accent-color) 0%, #d5302e 100%);
 	padding: 0;
 	display: flex;
 	align-items: center;
@@ -805,7 +820,7 @@ header.main-header .header-sticky.active{
 }
 
 .hero.hero-bg-image{
-	background: url('../images/hero-bg.jpg') no-repeat;
+	/* background: url('../images/hero-bg.jpg') no-repeat; */
 	background-position: center center;
 	background-size: cover;
 	padding: 160px 0;
@@ -1156,7 +1171,7 @@ header.main-header .header-sticky.active{
 /************************************/
 
 .about-us{
-	padding: 100px 0;
+	padding: 50px 0;
 }
 
 .about-us-content{
@@ -1263,7 +1278,7 @@ header.main-header .header-sticky.active{
 
 .about-img-2 figure{
 	display: block;
-	background: var(--primary-color);
+	background: #d52f30;
 	border-radius: 36px;
 	text-align: center;
 }
@@ -1278,7 +1293,7 @@ header.main-header .header-sticky.active{
 
 .about-img-2 img{
 	width: 100%;
-    aspect-ratio: 1 / 0.965;
+    aspect-ratio: 0 / 0.965;
     object-fit: cover;
 	border: 2px solid var(--white-color);
 	border-radius: 26px;	
@@ -1499,7 +1514,7 @@ header.main-header .header-sticky.active{
 /************************************/
 
 .intro-video{
-	padding: 100px 0;
+	padding: 50px 0;
 }
 
 .intro-video .section-row .section-title{
@@ -1849,7 +1864,7 @@ header.main-header .header-sticky.active{
 /************************************/
 
 .our-faqs{
-	padding: 100px 0;
+	padding: 50px 0;
 }
 
 .our-faqs-content{
@@ -2312,7 +2327,7 @@ header.main-header .header-sticky.active{
 /************************************/
 
 .cta-section.bg-section{
-	background-color: var(--primary-color);
+	background-color: #0b1030;
 	max-width: 1500px;
 	padding-top: 50px;
 }
@@ -2327,10 +2342,12 @@ header.main-header .header-sticky.active{
 }
 
 .cta-img-1 img{
-	width: 100%;
+	-webkit-mask-image: linear-gradient(to right, black 80%, transparent 100%);
+	/* width: 100%;
     max-width: 305px;
     aspect-ratio: 1 / 1.19;
-    object-fit: cover;
+    object-fit: cover; */
+	padding: 10px 0px;
 }
 
 .cta-box-content{
@@ -2472,7 +2489,7 @@ header.main-header .header-sticky.active{
 	position: relative;
 	width: 40px;
 	height: 40px;
-	background-image: linear-gradient(to right, var(--accent-color) 0%, var(--accent-color-two) 50%, var(--accent-color) 100%);
+	    background-image: linear-gradient(to right, var(--accent-color) 0%, #dc3545 50%, var(--accent-color) 100%);
     background-size: 200% auto;
 	border-radius: 50%;
 	display: flex;
@@ -2643,7 +2660,7 @@ header.main-header .header-sticky.active{
 /************************************/
 
 .main-footer.bg-section{
-	background-color: #b1fbf4;
+/* //	background-color: #b1fbf4; */
 	padding: 80px 0 0;
 	margin-bottom: 40px;
 }
@@ -2659,11 +2676,11 @@ header.main-header .header-sticky.active{
 
 .footer-logo img{
 	width: 100%;
-	max-width: 180px;
+	max-width: 203px;
 }
 
 .about-footer-content p{
-    color: #060606;
+    color: #fffcfc;
     margin: 0;
     font-weight: 700;
     font-size: 16px;
@@ -2671,7 +2688,7 @@ header.main-header .header-sticky.active{
 
 .footer-links h3{
 	font-size: 20px;
-	color: #131316;
+	color: #fefeff;
 	text-transform: capitalize;
 	margin-bottom: 20px;
 }
@@ -2712,7 +2729,7 @@ header.main-header .header-sticky.active{
 }
 
 .footer-links ul li a{
-    color: #060606;
+    color: #f9feff;
 	text-transform: capitalize;
 
     transition: all 0.3s ease-in-out;
@@ -2778,7 +2795,7 @@ position: relative;
 }
 
 .footer-contact-content p{
-    color: #060606;
+    color: #fffcfc;
     margin: 0;
     font-weight: 700;
     font-size: 15px;
@@ -2862,7 +2879,7 @@ position: relative;
 }
 
 .footer-copyright-text p{
-    color: #060606;
+    color: #ffffff;
     margin: 0;
     font-weight: 700;
     font-size: 16px;
@@ -2902,7 +2919,7 @@ position: relative;
 }
 
 .footer-terms-condition ul li a{
-    color: #060606;
+    color: #fffcfc;
     text-transform: capitalize;
     transition: all 0.3s ease-in-out;
     font-weight: 700;
@@ -6490,4 +6507,159 @@ position: relative;
     visibility: visible !important;
     height: auto !important;
   }
+}
+
+
+/* --- Rotating Play Button Styling --- */
+.play-button-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto; /* Yeh button ko column ke center me rakhega */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 50;
+}
+
+.play-button-wrapper:hover {
+  transform: scale(1.1);
+}
+
+.rotating-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: rotateText 10s linear infinite;
+}
+
+/* SVG ko 100% width aur height di hai taaki proper set ho */
+.rotating-text svg {
+  width: 100%;
+  height: 100%;
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* YE LINE ICON KO EKDUM BAAHUBALI KI TARAH CENTER ME LOCK KAREGI */
+  width: 60px;
+  height: 60px;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  z-index: 2;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.play-icon i {
+  margin-left: 4px; /* Play icon (triangle) ko visually center dikhane ke liye */
+}
+
+@keyframes rotateText {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+/* --- Click Block Issue Fix --- */
+/* Background video ki layer ko click steal karne se rokne ke liye */
+.hero-bg-video {
+  pointer-events: none; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Container ko z-index dena taaki content background ke upar rahe */
+.hero .container-fluid {
+  position: relative;
+  z-index: 10; 
+}
+
+/* Play button ko upar laane ke liye z-index add kiya */
+.play-button-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 120px;
+  height: 120px;
+  transition: transform 0.3s ease;
+  z-index: 50; /* Ye sabse zaruri hai click ke liye */
+}
+
+.play-button-wrapper:hover {
+  transform: scale(1.1);
+}
+
+/* ... Rotating text aur play-icon ka code pehle jaisa hi rakhein ... */
+
+/* --- Modal Video Height Fix --- */
+.video-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9); /* Thoda aur dark kiya better look ke liye */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999; /* Sabse upar dikhane ke liye */
+}
+
+.video-modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+  background: transparent; /* Black se transparent kar diya */
+  border-radius: 10px;
+  animation: popIn 0.3s ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ye video ki height control karega */
+.video-modal-content video {
+  width: 100%;
+  height: auto;
+  max-height: 80vh; /* Screen ki height ka sirf 80% lega, usse lamba nahi hoga */
+  object-fit: contain; /* Video ko bina stretch kiye perfect fit karega */
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  outline: none;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: -40px; /* Video ke thoda upar rakha hai taaki video chhupe na */
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 10;
+  transition: color 0.2s;
+}
+
+.close-modal-btn:hover {
+  color: #ff4757;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
