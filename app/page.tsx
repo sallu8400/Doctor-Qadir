@@ -7,7 +7,7 @@ export default function Home() {
    const [activeFaq, setActiveFaq] = useState("collapse1");
 
   // Ye function click karne par Accordion open/close karega
-  const toggleFaq = (faqId) => {
+  const toggleFaq = (faqId:string) => {
     if (activeFaq === faqId) {
       setActiveFaq(""); // Agar pehle se wahi open hai toh use band kar do
     } else {
