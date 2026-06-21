@@ -9,26 +9,16 @@ export default function Home() {
   // Ye function click karne par Accordion open/close karega
   const toggleFaq = (faqId:string) => {
     if (activeFaq === faqId) {
-      setActiveFaq(""); // Agar pehle se wahi open hai toh use band kar do
+      setActiveFaq(""); 
     } else {
-      setActiveFaq(faqId); // Naya click kiya toh use open kar do
+      setActiveFaq(faqId); 
     }
   }
   return (
     <>
 
 
-      {/* Preloader Start */}
-      {/* <div className="preloader">
-        <div className="loading-container">
-          <div className="loading"></div>
-          <div id="loading-icon">
-            <img src="/images/loader.svg" alt="" />
-          </div>
-        </div>
-      </div> */}
-      {/* Preloader End */}
-
+   
 
       
      
@@ -125,113 +115,123 @@ export default function Home() {
 
       {/* About Us Section Start */}
      <div className="about-us">
-  <div className="container">
-    <div className="row align-items-center">
-      <div className="col-lg-5">
-        {/* About Us Content Start */}
-        <div className="about-us-content">
-          {/* Section Title Start */}
-          <div className="section-title">
-            <h3 className="wow fadeInUp">about our clinic</h3>
-            <h2 className="text-anime-style-3" data-cursor="-opaque">
-              Natural Healing with Dr. Qadir Shaikh
-            </h2>
-            <p className="wow fadeInUp" data-wow-delay="0.25s">
-              Welcome to our Homeopathic Clinic. Led by Dr. Qadir Shaikh, we believe in treating the root cause of your illness with safe, natural, and side-effect-free homeopathic remedies.
-            </p>
-          </div>
-          {/* Section Title End */}
-
-          {/* About Us Body Start */}
-          <div className="about-us-body">
-            {/* About Info Item Start */}
-            <div className="about-info-item wow fadeInUp">
-              <div className="icon-box">
-                <img src="/images/icon-about-info-1.svg" alt="Holistic Care" />
-              </div>
-              <div className="about-info-item-content">
-                <h3>Holistic Treatment</h3>
-                <p>We don't just treat symptoms; we heal the person. Our remedies are customized to your unique health history and body type.</p>
-              </div>
+<div className="container">
+      <div className="row align-items-center">
+        <div className="col-lg-5">
+          {/* About Us Content Start */}
+          <div className="about-us-content">
+            {/* Section Title Start */}
+            <div className="section-title">
+              <h3 className="wow fadeInUp">about our clinic</h3>
+              <h2 className="text-anime-style-3" data-cursor="-opaque">
+                Natural Healing with Dr. Qadir Shaikh
+              </h2>
+              <p className="wow fadeInUp" data-wow-delay="0.25s">
+                Welcome to our Homeopathic Clinic. Led by Dr. Qadir Shaikh, we believe in treating the root cause of your illness with safe, natural, and side-effect-free homeopathic remedies.
+              </p>
             </div>
-            {/* About Info Item End */}
+            {/* Section Title End */}
 
-            {/* About Info Item Start */}
-            <div className="about-info-item wow fadeInUp" data-wow-delay="0.25s">
-              <div className="icon-box">
-                <img src="/images/icon-about-info-2.svg" alt="Natural Remedies" />
+            {/* About Us Body Start */}
+            <div className="about-us-body">
+              {/* About Info Item Start */}
+              <div className="about-info-item wow fadeInUp">
+                <div className="icon-box">
+                  <img src="/images/icon-about-info-1.svg" alt="Holistic Care" loading="lazy" />
+                </div>
+                <div className="about-info-item-content">
+                  <h3>Holistic Treatment</h3>
+                  <p>We don't just treat symptoms; we heal the person. Our remedies are customized to your unique health history and body type.</p>
+                </div>
               </div>
-              <div className="about-info-item-content">
-                <h3>Safe & Natural Medicine</h3>
-                <p>Experience the power of homeopathy. Our medicines are 100% natural, safe for all ages, and completely free from harmful side effects.</p>
+              {/* About Info Item End */}
+
+              {/* About Info Item Start */}
+              <div className="about-info-item wow fadeInUp" data-wow-delay="0.25s">
+                <div className="icon-box">
+                  <img src="/images/icon-about-info-2.svg" alt="Natural Remedies" loading="lazy" />
+                </div>
+                <div className="about-info-item-content">
+                  <h3>Safe & Natural Medicine</h3>
+                  <p>Experience the power of homeopathy. Our medicines are 100% natural, safe for all ages, and completely free from harmful side effects.</p>
+                </div>
               </div>
+              {/* About Info Item End */}
+
+              {/* About Info Item Start */}
+              <div className="about-info-item wow fadeInUp" data-wow-delay="0.5s">
+                <div className="icon-box">
+                  <img src="/images/icon-about-info-3.svg" alt="Root Cause" loading="lazy" />
+                </div>
+                <div className="about-info-item-content">
+                  <h3>Root Cause Healing</h3>
+                  <p>Instead of temporary relief, Dr. Qadir focuses on identifying and curing the underlying cause of your illness for long-lasting health.</p>
+                </div>
+              </div>
+              {/* About Info Item End */}
             </div>
-            {/* About Info Item End */}
+            {/* About Us Body End */}
 
-            {/* About Info Item Start */}
-            <div className="about-info-item wow fadeInUp" data-wow-delay="0.5s">
-              <div className="icon-box">
-                <img src="/images/icon-about-info-3.svg" alt="Root Cause" />
-              </div>
-              <div className="about-info-item-content">
-                <h3>Root Cause Healing</h3>
-                <p>Instead of temporary relief, Dr. Qadir focuses on identifying and curing the underlying cause of your illness for long-lasting health.</p>
-              </div>
+            {/* About Us Button Start */}
+            <div className="about-us-btn wow fadeInUp" data-wow-delay="0.75s">
+              <a href="about.html" className="btn-default">Learn more about us</a>
             </div>
-            {/* About Info Item End */}
+            {/* About Us Button End */}
           </div>
-          {/* About Us Body End */}
-
-          {/* About Us Button Start */}
-          <div className="about-us-btn wow fadeInUp" data-wow-delay="0.75s">
-            <a href="about.html" className="btn-default">Learn more about us</a>
-          </div>
-          {/* About Us Button End */}
+          {/* About Us Content End */}
         </div>
-        {/* About Us Content End */}
-      </div>
 
-      <div className="col-lg-7">
-        {/* About Us Images Start */}
-        <div className="about-us-images">
-          {/* About Image 1 Start */}
-          <div className="about-img-1">
-            <figure className="image-anime reveal">
-              {/* Aapki clinic ya Dr. Qadir ki photo yahan aayegi */}
-              <img src="/img/homo.png" alt="Clinic Clinic" />
-            </figure>
+        <div className="col-lg-7">
+          {/* About Us Images Start */}
+          <div className="about-us-images">
+            {/* About Image 1 Start */}
+            <div className="about-img-1">
+              <figure className="image-anime reveal">
+                {/* 
+                  FIX: 'fetchPriority' camelCase me use kiya gaya hai React/TypeScript ke liye.
+                */}
+                <img 
+                  src="/img/homo.png" 
+                  alt="Dr. Qadir Clinic" 
+                  fetchPriority="high"
+                  loading="eager"
+                  style={{ transform: "translate(0px, 0px)" }}
+                />
+              </figure>
+            </div>
+            {/* About Image 1 End */}
+
+            {/* About Image 2 Start */}
+            <div className="about-img-2">
+              <figure className="image-anime">
+                <img 
+                  src="/img/suport-1.jpg" 
+                  alt="Video Consultation Support" 
+                  loading="lazy" 
+                />
+                <h3>Video Consultation Support</h3>
+              </figure>
+            </div>
+            {/* About Image 2 End */}
+
+            {/* Company Timing Start */}
+            <div className="company-timing">
+              <h3>Clinic Hours</h3>
+              <ul>
+                <li><span>Mon To Sat</span> 10:00 AM - 9:00 PM</li>
+                <li><span>Sunday</span> Closed</li>
+              </ul>
+
+              <figure>
+                <i className="fa-solid fa-clock"></i>
+              </figure>
+            </div>
+            {/* Company Timing End */}
           </div>
-          {/* About Image 1 End */}
-
-          {/* About Image 2 Start */}
-          <div className="about-img-2">
-            <figure className="image-anime">
-              <img src="/img/suport-1.jpg" alt="Video Support" />
-              {/* Thoda professional word use kiya hai video call ke liye */}
-              <h3>Video  Consultation Support</h3>
-            </figure>
-          </div>
-          {/* About Image 2 End */}
-
-          {/* Company Timing Start */}
-          <div className="company-timing">
-            <h3>Clinic Hours</h3>
-            <ul>
-              {/* Aap apne hisaab se timing change kar lena yahan */}
-              <li><span>Mon To Sat</span> 10:00 PM-9:00 PM</li>
-              <li><span>Sunday</span> Closed</li>
-            </ul>
-
-            <figure>
-              <i className="fa-solid fa-clock"></i>
-            </figure>
-          </div>
-          {/* Company Timing End */}
+          {/* About Us Images End */}
         </div>
-        {/* About Us Images End */}
       </div>
     </div>
-  </div>
 </div>
       {/* About Us Section End */}
 
@@ -715,7 +715,7 @@ export default function Home() {
         </div>
       </div>
     </div>
-  );
+
       {/* Our Faqs Section End */}
 
 
@@ -824,42 +824,54 @@ export default function Home() {
       {/* CTA Section Start */}
       <div className="cta-section bg-section">
         <div className="container">
-          <div className="row d-flex justify-between gap-3" >
-            <div className="col-lg-4 col-md-3 col-6 order-lg-1 order-md-1 order-2">
-              {/* CTA Box img 1 Start */}
-              <div className="cta-img-1">
-                {/* <img src="/images/cta-img-1.png" alt="" /> */}
-                      <img src="img/6.png" alt="" />
-              </div>
-              {/* CTA Box img 1 End */}
-            </div>
+    <div className="row d-flex justify-content-between gap-3">
+  {/* Yahan maine col-6 ko col-12 kiya hai taaki mobile me perfect center aaye */}
+  <div className="col-lg-4 col-md-3 col-12 order-lg-1 order-md-1 order-2 text-center text-md-start">
+    {/* CTA Box img 1 Start */}
+    <div className="cta-img-1 d-flex justify-content-center justify-content-md-start">
+      {/* className="img-fluid" add kiya hai responsive ke liye */}
+      <img src="img/6.png" alt="CTA Image" className="img-fluid" />
+    </div>
+    {/* CTA Box img 1 End */}
+  </div>
 
-            <div className="col-lg-6 col-md-6 order-lg-2 order-md-2 order-1">
-              {/* CTA Box Content Start */}
-              <div className="cta-box-content">
-                {/* Section Title Start */}
-                <div className="section-title">
-                  <h2 className="text-anime-style-3" data-cursor="-opaque">Take the first step to better health</h2>
-                </div>
-                {/* Section Title End */}
+  <div className="col-lg-6 col-md-6 col-12 order-lg-2 order-md-2 order-1 text-center text-md-start">
+    {/* CTA Box Content Start */}
+    <div className="cta-box-content">
+      {/* Section Title Start */}
+      <div className="section-title">
+        <h2 className="text-anime-style-3" data-cursor="-opaque">
+          Take the first step to better health
+        </h2>
+      </div>
+      {/* Section Title End */}
 
-                {/* CTA Box Button Start */}
-                <div className="cta-box-btn wow fadeInUp" data-wow-delay="0.25s">
-                  <a href="book-appointment.html" className="btn-default">Book a appointment now</a>
-                </div>
-                {/* CTA Box Button End */}
+      {/* CTA Box Button Start */}
+      <div className="cta-box-btn wow fadeInUp" data-wow-delay="0.25s">
+  <a 
+    className="nav-link btn-default" 
+    href="https://wa.me/918082408887?text=Hello%20Dr.%20Qadir,%20I%20would%20like%20to%20book%20an%20appointment." 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+          Book an appointment now
+        </a>
+      </div>
 
-                {/* CTA Box Text Start */}
-                <div className="cta-box-text wow fadeInUp" data-wow-delay="0.5s">
-                  <p>It only <span>takes 2 minutes</span> to complete</p>
-                </div>
-                {/* CTA Box Text End */}
-              </div>
-              {/* CTA Box Content End */}
-            </div>
+   
+      {/* CTA Box Button End */}
 
-        
-          </div>
+      {/* CTA Box Text Start */}
+      <div className="cta-box-text wow fadeInUp" data-wow-delay="0.5s">
+        <p>
+          It only <span>takes 2 minutes</span> to complete
+        </p>
+      </div>
+      {/* CTA Box Text End */}
+    </div>
+    {/* CTA Box Content End */}
+  </div>
+</div>
         </div>
       </div>
       {/* CTA Section End */}

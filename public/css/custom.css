@@ -734,7 +734,7 @@ header.main-header .header-sticky.active{
 	position: absolute;
     width: 100%;
 	padding: 0;
-	background: linear-gradient(90deg, var(--accent-color) 0%, var(--accent-color-two) 100%);
+	    background: linear-gradient(90deg, #30a5aa 0%, var(--accent-color-two) 100%);
 }
 
 .slicknav_menu ul{
@@ -5261,8 +5261,8 @@ position: relative;
 	}
 
 	.cta-img-1 img{
-		max-width: 220px;
-		aspect-ratio: 1 / 1.35;
+		max-width: 190px;
+		/* aspect-ratio: 1 / 1.35; */
 	}
 
 	.cta-box-content .section-title{
@@ -6148,9 +6148,9 @@ position: relative;
 		height: auto;
 	}
 
-	.cta-img-1 img{
+	/* .cta-img-1 img{
 		max-width: 100%;
-    }
+    } */
 
 	.cta-box-content{
         padding: 25px 0 30px;
