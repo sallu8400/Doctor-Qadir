@@ -1,29 +1,27 @@
 import React from 'react';
 // Apni CSS file import kar lena (jaise './Footer.css' ya jo bhi aap use kar rahe ho)
 import "./footer.css";
+import { CLINIC } from "../lib/site";
 
 const Footer = () => {
   // WhatsApp par connect karne ke liye number aur message
   const whatsappNumber = "918082408887"; // Country code 91 ke sath
   const whatsappMessage = encodeURIComponent("Hello Dr. Qadir, I would like to book an appointment.");
 
-  // Clinic ka address - Google Map embed ke liye yahi use hoga
-  const clinicAddress =
-    "Range Heights, 102, New Link Rd, opp. Kajupada, Behram Baug, Jogeshwari West, Mumbai";
-
-  // Bina API key ke free Google Maps embed link (address se auto geocode ho jata hai)
+  // Bina API key ke free Google Maps embed link - Google listing ke naam se search hota hai
+  // taaki map par seedha "Neulife homoeopathy clinic" ka pin aaye
   const mapEmbedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(
-    clinicAddress
-  )}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+    CLINIC.mapQuery
+  )}&t=&z=16&ie=UTF8&iwloc=&output=embed`;
 
   // "Get Directions" button is link par le jayega (Google Maps app/website)
-  const mapDirectionsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-    clinicAddress
+  const mapDirectionsLink = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+    CLINIC.mapQuery
   )}`;
 
   return (
     <>
-      <footer className="main-footer bg-section">
+      <footer className="main-footer bg-section" id="contact">
         <div className="container">
           <div className="row">
             <div className="col-lg-4 col-md-12">
@@ -31,20 +29,20 @@ const Footer = () => {
               <div className="about-footer">
                 {/* Footer Logo Start */}
                 <div className="footer-logo">
-                  <img src="/images/homopath-remove-bg.png" alt="Dr. Qadir Homeopathy Logo" />
+                  <img src="/images/homopath-remove-bg.png" alt="Neulife Homoeopathy Clinic Logo" loading="lazy" />
                 </div>
                 {/* Footer Logo End */}
 
                 {/* About Footer Content Start */}
                 <div className="about-footer-content">
-                  <p>Experience safe, natural, and effective homeopathic care with Dr. Qadir Shaikh. We believe in treating the root cause for permanent healing.</p>
+                  <p>Experience safe, natural, and effective homeopathic care with Dr. A. Qadir Shaikh (M.D.) at Neulife Homoeopathy Clinic, Jogeshwari West, Mumbai. We believe in treating the root cause for permanent healing.</p>
                 </div>
                 {/* About Footer Content End */}
               </div>
               {/* About Footer End */}
             </div>
 
-            <div className="col-lg-2 col-md-4 col-6">
+            <div className="col-lg-3 col-md-6 col-12">
               {/* Footer Links Start */}
               <div className="footer-links">
                 <h3>Our Treatments</h3>
@@ -59,8 +57,7 @@ const Footer = () => {
               {/* Footer Links End */}
             </div>
 
-            {/* ===== Quick Links section yaha se hata kar uski jagah Google Map laga diya ===== */}
-                  <div className="col-lg-3 col-md-4">
+            <div className="col-lg-5 col-md-6 col-12">
               {/* Footer Contact Box Start */}
               <div className="footer-contact-box footer-links">
                 <h3>Contact Us</h3>
@@ -94,7 +91,9 @@ const Footer = () => {
                     <img src="/images/icon-location.svg" alt="Location" />
                   </div>
                   <div className="footer-contact-content">
-                    <p>Range Heights, 102, New Link Rd, opp. Kajupada,Behram Baug ,Jogeshwari West</p>
+                    <address style={{ margin: 0, fontStyle: "normal" }}>
+                      <p>{CLINIC.streetAddress}, {CLINIC.locality}, {CLINIC.region} {CLINIC.postalCode}</p>
+                    </address>
                     {/* <p style={{fontSize: "14px", marginTop: "5px", color: "#1fa4a2"}}>Opens 8 am Mon</p> */}
                   </div>
                 </div>
@@ -103,28 +102,29 @@ const Footer = () => {
               {/* Footer Contact Box End */}
             </div>
 
-            
-            
-            <div className="col-lg-3 col-md-4 col-6">
+            {/* ===== Map Section - neeche full width ===== */}
+            <div className="col-lg-12">
               <div className="footer-links footer-map-box">
-                <h3>Find Us</h3>
+                <div className="footer-map-header">
+                  <h3>Find Us on Map</h3>
+                  <a
+                    href={mapDirectionsLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer-map-link"
+                  >
+                    <i className="fa-solid fa-diamond-turn-right"></i> Get Directions
+                  </a>
+                </div>
                 <div className="footer-map-wrapper">
                   <iframe
                     src={mapEmbedSrc}
-                    title="Dr. Qadir Homeopathy Clinic Location"
+                    title="Neulife Homoeopathy Clinic location - Jogeshwari West, Mumbai"
                     loading="lazy"
                     allowFullScreen
                     referrerPolicy="no-referrer-when-downgrade"
                   ></iframe>
                 </div>
-                <a
-                  href={mapDirectionsLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="footer-map-link"
-                >
-                  Get Directions →
-                </a>
               </div>
             </div>
             {/* ===== Map Section End ===== */}
@@ -150,7 +150,7 @@ const Footer = () => {
             <div className="row align-items-center">
               <div className="col-md-6">
                 <div className="footer-copyright-text">
-                  <p>Copyright © 2024 Dr. Qadir Shaikh. All Rights Reserved.</p>
+                  <p>Copyright © {new Date().getFullYear()} Neulife Homoeopathy Clinic - Dr. A. Qadir Shaikh. All Rights Reserved.</p>
                 </div>
               </div>
 

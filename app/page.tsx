@@ -2,6 +2,44 @@
 
 import React, { useState } from 'react';
 
+// FAQ ka data - accordion aur Google FAQ schema dono isi se bante hain
+const faqs = [
+  {
+    question: "Is homeopathic medicine safe? Does it have side effects?",
+    answer: "Yes, homeopathic medicines are absolutely safe, highly diluted, and 100% natural. They do not cause any harmful side effects and are perfectly safe for everyone, including infants, pregnant women, and the elderly.",
+  },
+  {
+    question: "Does homeopathy take a very long time to work?",
+    answer: "This is a common myth. For acute conditions like fever, cold, or diarrhea, homeopathy works very fast. For chronic (old) diseases, it takes some time because the medicine works to eliminate the root cause of the disease, not just suppress the symptoms.",
+  },
+  {
+    question: "What should I expect during my first visit?",
+    answer: "During your first visit, Dr. Qadir Shaikh will take a detailed case history. We will ask about your physical symptoms, past medical history, lifestyle, diet, and emotional state. This helps us find a remedy specifically tailored to your unique constitution.",
+  },
+  {
+    question: "Are there any dietary restrictions while taking these medicines?",
+    answer: "Generally, we advise avoiding strong-smelling items like raw onion, garlic, camphor, or coffee right before or after taking the medicine, as strong odors can neutralize the effect of the sweet pills. A gap of 20-30 minutes before and after eating is recommended.",
+  },
+  {
+    question: "Can I take homeopathic medicines along with allopathic medicines?",
+    answer: "Yes, you can. It is usually safe to take them together without stopping your regular allopathic medicines. However, it is best to maintain a gap of at least 30-40 minutes between the two. Always inform the doctor about all the medications you are currently taking.",
+  },
+  {
+    question: "How do I schedule an appointment with Dr. Qadir Shaikh?",
+    answer: "You can easily book an appointment by calling our clinic helpline, sending us a message on WhatsApp, or using the 'Book Appointment' button on our website. We offer both in-clinic visits at Jogeshwari West, Mumbai and online video consultations.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+};
+
 export default function Home() {
    const [isModalOpen, setIsModalOpen] = useState(false);
    const [activeFaq, setActiveFaq] = useState("collapse1");
@@ -38,23 +76,30 @@ export default function Home() {
             <div className="col-lg-6">
               <div className="hero-content">
                 <div className="section-title dark-section">
-                  <h3 className="wow fadeInUp">your health our priority</h3>
+                  <h3 className="wow fadeInUp">Neulife Homoeopathy Clinic</h3>
                   <h1 className="text-anime-style-3" data-cursor="-opaque">
-                    Expert medical care you can rely on
+                    Best Homeopathy Doctor in Jogeshwari West, Mumbai
                   </h1>
                   <p className="wow fadeInUp" data-wow-delay="0.2s">
-                    Experience healthcare you can trust. Our dedicated team provides compassionate, high-quality care.
+                    Dr. A. Qadir Shaikh (M.D.) offers safe, natural and side-effect-free homeopathic treatment for skin, hair, allergy, migraine, child immunity and chronic diseases.
                   </p>
                 </div>
 
                 <div className="hero-btn wow fadeInUp" data-wow-delay="0.4s">
-                  <a href="book-appointment.html" className="btn-default">book a appointment</a>
-                  <a href="#" className="btn-default">about us</a>
+                  <a
+                    href="https://wa.me/918082408887?text=Hello%20Dr.%20Qadir,%20I%20would%20like%20to%20book%20an%20appointment."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-default"
+                  >
+                    book a appointment
+                  </a>
+                  <a href="#about" className="btn-default">about us</a>
                 </div>
 
                 <div className="google-rating wow fadeInUp" data-wow-delay="0.75s">
                   <ul>
-                    <li>Google Rating <span>5.0</span></li>
+                    <li>Google Rating <span>4.9</span></li>
                     <li>
                       <i className="fa-solid fa-star"></i>
                       <i className="fa-solid fa-star"></i>
@@ -62,7 +107,7 @@ export default function Home() {
                       <i className="fa-solid fa-star"></i>
                       <i className="fa-solid fa-star"></i>
                     </li>
-                    <li>based on 500 reviews</li>
+                    <li>based on 123+ reviews</li>
                   </ul>
                 </div>
               </div>
@@ -114,7 +159,7 @@ export default function Home() {
       {/* Hero Section End */}
 
       {/* About Us Section Start */}
-     <div className="about-us">
+     <div className="about-us" id="about">
 <div className="container">
       <div className="row align-items-center">
         <div className="col-lg-5">
@@ -127,7 +172,7 @@ export default function Home() {
                 Natural Healing with Dr. Qadir Shaikh
               </h2>
               <p className="wow fadeInUp" data-wow-delay="0.25s">
-                Welcome to our Homeopathic Clinic. Led by Dr. Qadir Shaikh, we believe in treating the root cause of your illness with safe, natural, and side-effect-free homeopathic remedies.
+                Welcome to Neulife Homoeopathy Clinic in Jogeshwari West, Mumbai. Led by Dr. A. Qadir Shaikh (M.D.), we believe in treating the root cause of your illness with safe, natural, and side-effect-free homeopathic remedies.
               </p>
             </div>
             {/* Section Title End */}
@@ -174,7 +219,7 @@ export default function Home() {
 
             {/* About Us Button Start */}
             <div className="about-us-btn wow fadeInUp" data-wow-delay="0.75s">
-              <a href="about.html" className="btn-default">Learn more about us</a>
+              <a href="#faqs" className="btn-default">Learn more about us</a>
             </div>
             {/* About Us Button End */}
           </div>
@@ -186,16 +231,14 @@ export default function Home() {
           <div className="about-us-images">
             {/* About Image 1 Start */}
             <div className="about-img-1">
-              <figure className="image-anime reveal">
-                {/* 
-                  FIX: 'fetchPriority' camelCase me use kiya gaya hai React/TypeScript ke liye.
-                */}
-                <img 
-                  src="/img/homo.png" 
-                  alt="Dr. Qadir Clinic" 
+              {/* 'reveal' class hata di - wo GSAP script ke load hone tak image ko hidden rakhti thi,
+                  isliye image refresh ke baad hi dikhti thi. 1.5MB PNG ki jagah 21KB WebP lagaya. */}
+              <figure className="image-anime">
+                <img
+                  src="/img/homeopathy-medicine.webp"
+                  alt="Homeopathic medicine pills at Neulife Homoeopathy Clinic, Jogeshwari West, Mumbai"
                   fetchPriority="high"
                   loading="eager"
-                  style={{ transform: "translate(0px, 0px)" }}
                 />
               </figure>
             </div>
@@ -205,8 +248,8 @@ export default function Home() {
             <div className="about-img-2">
               <figure className="image-anime">
                 <img 
-                  src="/img/suport-1.jpg" 
-                  alt="Video Consultation Support" 
+                  src="/img/suport-1.jpg"
+                  alt="Dr. A. Qadir Shaikh, homeopathy doctor - online video consultation"
                   loading="lazy" 
                 />
                 <h3>Video Consultation Support</h3>
@@ -393,7 +436,7 @@ export default function Home() {
       {/* Our Service Section End */}
 
       {/* Intro Video Section Start */}
-      <div className="intro-video">
+      <div className="intro-video" id="why-choose-us">
         <div className="container">
      <div className="row section-row align-items-center">
     <div className="col-lg-7">
@@ -404,7 +447,7 @@ export default function Home() {
           Why patients trust Us for their healing
         </h2>
         <p className="wow fadeInUp" data-wow-delay="0.25s">
-          Our commitment to natural healing, compassion, and finding the root cause of diseases has earned the trust of countless patients. Discover the gentle yet powerful approach of classical homeopathy.
+          Our commitment to natural healing, compassion, and finding the root cause of diseases has earned the trust of countless patients across Jogeshwari, Andheri and Mumbai. Discover the gentle yet powerful approach of classical homeopathy.
         </p>
       </div>
       {/* Section Title End */}
@@ -545,7 +588,12 @@ export default function Home() {
       {/* Our Excellence Section End */}
 
       {/* Our Faqs Section Start */}
-   <div className="our-faqs bg-section" style={{ background: "white" }}>
+   <div className="our-faqs bg-section" id="faqs" style={{ background: "white" }}>
+      {/* FAQ schema - Google search me FAQ dikhane ke liye */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="container">
         <div className="row">
           <div className="col-lg-6">
@@ -567,7 +615,7 @@ export default function Home() {
                 <div className="faq-cta-content">
                   <p>Your health is our first priority</p>
                   <h3>Clinic Helpline</h3>
-                  <p><a href="tel:+919876543210">+91 80824 08887</a></p>
+                  <p><a href="tel:+918082408887">+91 80824 08887</a></p>
                 </div>
               </div>
             </div>
@@ -576,139 +624,31 @@ export default function Home() {
           <div className="col-lg-6">
         {/* FAQ Accordion Start */}
 <div className="faq-accordion" id="faqaccordion">
-  
-  {/* FAQ Item 1 */}
-  <div className="accordion-item wow fadeInUp">
-    <h2 className="accordion-header" id="heading1">
-      <button 
-        className={`accordion-button ${activeFaq === "collapse1" ? "" : "collapsed"}`} 
-        type="button" 
-        onClick={() => toggleFaq("collapse1")}
-      >
-        Is homeopathic medicine safe? Does it have side effects?
-      </button>
-    </h2>
-    <div 
-      id="collapse1" 
-      className={`accordion-collapse collapse ${activeFaq === "collapse1" ? "show" : ""}`}
-      style={{ display: activeFaq === "collapse1" ? "block" : "none" }}
-    >
-      <div className="accordion-body">
-        <p>Yes, homeopathic medicines are absolutely safe, highly diluted, and 100% natural. They do not cause any harmful side effects and are perfectly safe for everyone, including infants, pregnant women, and the elderly.</p>
+  {faqs.map((faq, i) => {
+    const faqId = `collapse${i + 1}`;
+    return (
+      <div className="accordion-item wow fadeInUp" data-wow-delay={i ? `${i * 0.2}s` : undefined} key={faqId}>
+        <h2 className="accordion-header" id={`heading${i + 1}`}>
+          <button
+            className={`accordion-button ${activeFaq === faqId ? "" : "collapsed"}`}
+            type="button" 
+            onClick={() => toggleFaq(faqId)}
+          >
+            {faq.question}
+          </button>
+        </h2>
+        <div 
+          id={faqId} 
+          className={`accordion-collapse collapse ${activeFaq === faqId ? "show" : ""}`}
+          style={{ display: activeFaq === faqId ? "block" : "none" }}
+        >
+          <div className="accordion-body">
+            <p>{faq.answer}</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-
-  {/* FAQ Item 2 */}
-  <div className="accordion-item wow fadeInUp" data-wow-delay="0.2s">
-    <h2 className="accordion-header" id="heading2">
-      <button 
-        className={`accordion-button ${activeFaq === "collapse2" ? "" : "collapsed"}`} 
-        type="button" 
-        onClick={() => toggleFaq("collapse2")}
-      >
-        Does homeopathy take a very long time to work?
-      </button>
-    </h2>
-    <div 
-      id="collapse2" 
-      className={`accordion-collapse collapse ${activeFaq === "collapse2" ? "show" : ""}`}
-      style={{ display: activeFaq === "collapse2" ? "block" : "none" }}
-    >
-      <div className="accordion-body">
-        <p>This is a common myth. For acute conditions like fever, cold, or diarrhea, homeopathy works very fast. For chronic (old) diseases, it takes some time because the medicine works to eliminate the root cause of the disease, not just suppress the symptoms.</p>
-      </div>
-    </div>
-  </div>
-
-  {/* FAQ Item 3 */}
-  <div className="accordion-item wow fadeInUp" data-wow-delay="0.4s">
-    <h2 className="accordion-header" id="heading3">
-      <button 
-        className={`accordion-button ${activeFaq === "collapse3" ? "" : "collapsed"}`} 
-        type="button" 
-        onClick={() => toggleFaq("collapse3")}
-      >
-        What should I expect during my first visit?
-      </button>
-    </h2>
-    <div 
-      id="collapse3" 
-      className={`accordion-collapse collapse ${activeFaq === "collapse3" ? "show" : ""}`}
-      style={{ display: activeFaq === "collapse3" ? "block" : "none" }}
-    >
-      <div className="accordion-body">
-        <p>During your first visit, Dr. Qadir Shaikh will take a detailed case history. We will ask about your physical symptoms, past medical history, lifestyle, diet, and emotional state. This helps us find a remedy specifically tailored to your unique constitution.</p>
-      </div>
-    </div>
-  </div>
-
-  {/* FAQ Item 4 */}
-  <div className="accordion-item wow fadeInUp" data-wow-delay="0.6s">
-    <h2 className="accordion-header" id="heading4">
-      <button 
-        className={`accordion-button ${activeFaq === "collapse4" ? "" : "collapsed"}`} 
-        type="button" 
-        onClick={() => toggleFaq("collapse4")}
-      >
-        Are there any dietary restrictions while taking these medicines?
-      </button>
-    </h2>
-    <div 
-      id="collapse4" 
-      className={`accordion-collapse collapse ${activeFaq === "collapse4" ? "show" : ""}`}
-      style={{ display: activeFaq === "collapse4" ? "block" : "none" }}
-    >
-      <div className="accordion-body">
-        <p>Generally, we advise avoiding strong-smelling items like raw onion, garlic, camphor, or coffee right before or after taking the medicine, as strong odors can neutralize the effect of the sweet pills. A gap of 20-30 minutes before and after eating is recommended.</p>
-      </div>
-    </div>
-  </div>
-
-  {/* FAQ Item 5 */}
-  <div className="accordion-item wow fadeInUp" data-wow-delay="0.8s">
-    <h2 className="accordion-header" id="heading5">
-      <button 
-        className={`accordion-button ${activeFaq === "collapse5" ? "" : "collapsed"}`} 
-        type="button" 
-        onClick={() => toggleFaq("collapse5")}
-      >
-        Can I take homeopathic medicines along with allopathic medicines?
-      </button>
-    </h2>
-    <div 
-      id="collapse5" 
-      className={`accordion-collapse collapse ${activeFaq === "collapse5" ? "show" : ""}`}
-      style={{ display: activeFaq === "collapse5" ? "block" : "none" }}
-    >
-      <div className="accordion-body">
-        <p>Yes, you can. It is usually safe to take them together without stopping your regular allopathic medicines. However, it is best to maintain a gap of at least 30-40 minutes between the two. Always inform the doctor about all the medications you are currently taking.</p>
-      </div>
-    </div>
-  </div>
-
-  {/* FAQ Item 6 */}
-  <div className="accordion-item wow fadeInUp" data-wow-delay="1s">
-    <h2 className="accordion-header" id="heading6">
-      <button 
-        className={`accordion-button ${activeFaq === "collapse6" ? "" : "collapsed"}`} 
-        type="button" 
-        onClick={() => toggleFaq("collapse6")}
-      >
-        How do I schedule an appointment with Dr. Qadir Shaikh?
-      </button>
-    </h2>
-    <div 
-      id="collapse6" 
-      className={`accordion-collapse collapse ${activeFaq === "collapse6" ? "show" : ""}`}
-      style={{ display: activeFaq === "collapse6" ? "block" : "none" }}
-    >
-      <div className="accordion-body">
-        <p>You can easily book an appointment by calling our clinic helpline, sending us a message on WhatsApp, or using the 'Book Appointment' button on our website. We offer both in-clinic visits and online video consultations.</p>
-      </div>
-    </div>
-  </div>
-
+    );
+  })}
 </div>
 {/* FAQ Accordion End */}
           </div>
@@ -830,7 +770,7 @@ export default function Home() {
     {/* CTA Box img 1 Start */}
     <div className="cta-img-1 d-flex justify-content-center justify-content-md-start">
       {/* className="img-fluid" add kiya hai responsive ke liye */}
-      <img src="img/6.png" alt="CTA Image" className="img-fluid" />
+      <img src="/img/6.png" alt="Book homeopathy treatment with Dr. A. Qadir Shaikh in Jogeshwari West" className="img-fluid" loading="lazy" />
     </div>
     {/* CTA Box img 1 End */}
   </div>

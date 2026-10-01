@@ -38,6 +38,75 @@ import './globals.css'; // Aapki global css
 import Header from '../components/Header'; // Header Import kiya
 import Footer from '../components/Footer'; // Footer Import kiya
 import Script from 'next/script'; // Scripts ke liye
+import type { Metadata } from 'next';
+import { SITE_URL, SITE_NAME, SITE_TITLE, SITE_DESCRIPTION, SITE_KEYWORDS, CLINIC } from '../lib/site';
+
+// SEO: Google search me title, description, keywords aur share preview yahi se banenge
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+  keywords: SITE_KEYWORDS,
+  authors: [{ name: CLINIC.doctor }],
+  alternates: { canonical: '/' },
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: 'website',
+    locale: 'en_IN',
+    url: '/',
+    siteName: SITE_NAME,
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [{ url: '/img/homeopathy-medicine.webp', width: 800, height: 907, alt: 'Homeopathic medicine at Neulife Homoeopathy Clinic, Jogeshwari West' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: ['/img/homeopathy-medicine.webp'],
+  },
+  other: {
+    'geo.region': 'IN-MH',
+    'geo.placename': 'Jogeshwari West, Mumbai',
+  },
+};
+
+// Google ko clinic ki details (address, phone, timing) structured form me batane ke liye
+const clinicSchema = {
+  '@context': 'https://schema.org',
+  '@type': ['MedicalClinic', 'LocalBusiness'],
+  name: CLINIC.name,
+  alternateName: SITE_NAME,
+  description: SITE_DESCRIPTION,
+  url: SITE_URL,
+  image: `${SITE_URL}/img/homeopathy-medicine.webp`,
+  logo: `${SITE_URL}/images/homoepath-logo.png`,
+  telephone: CLINIC.phone,
+  email: CLINIC.email,
+  medicalSpecialty: 'Homeopathic',
+  priceRange: '₹₹',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: CLINIC.streetAddress,
+    addressLocality: CLINIC.locality,
+    addressRegion: CLINIC.region,
+    postalCode: CLINIC.postalCode,
+    addressCountry: CLINIC.country,
+  },
+  hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CLINIC.mapQuery)}`,
+  areaServed: ['Jogeshwari West', 'Jogeshwari East', 'Andheri West', 'Goregaon', 'Mumbai'],
+  openingHoursSpecification: [{
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    opens: CLINIC.openingHours.opens,
+    closes: CLINIC.openingHours.closes,
+  }],
+  employee: {
+    '@type': 'Physician',
+    name: CLINIC.doctor,
+    medicalSpecialty: 'Homeopathic',
+  },
+};
 
 export default function RootLayout({
   children,
@@ -45,8 +114,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en-IN">
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(clinicSchema) }}
+        />
         {/* Saare CSS Links yahan aayenge */}
         <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png" />
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />

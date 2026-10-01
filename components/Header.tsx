@@ -42,7 +42,7 @@ const Header = () => {
           <nav className="navbar navbar-expand-lg">
             <div className="container">
               <a className="navbar-brand  w-42" href="/">
-                <img src="/images/homoepath-logo.png" alt="Logo"    />
+                <img src="/images/homoepath-logo.png" alt="Neulife Homoeopathy Clinic - Dr. A. Qadir Shaikh Logo" />
               </a>
               
               {/* Note: d-lg-flex wala fix yahan zaroor rakhna */}
@@ -55,9 +55,9 @@ const Header = () => {
                         <li className="nav-item"><a className="nav-link" href="index-video.html">Home - Video</a></li>
                       </ul> */}
                     </li>
-                    <li className="nav-item"><a className="nav-link" href="#">About Us</a></li>
-                    <li className="nav-item"><a className="nav-link" href="#">Services</a></li>
-                    <li className="nav-item"><a className="nav-link" href="#">Contact Us</a></li>
+                    <li className="nav-item"><a className="nav-link" href="/#about">About Us</a></li>
+                    <li className="nav-item"><a className="nav-link" href="/#why-choose-us">Services</a></li>
+                    <li className="nav-item"><a className="nav-link" href="/#contact">Contact Us</a></li>
 <li className="nav-item highlighted-menu">
   <a 
     className="nav-link" 
