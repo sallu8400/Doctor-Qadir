@@ -3,7 +3,7 @@
 
 // Live domain ka URL - sitemap, canonical aur share preview isi se bante hain
 // Naya domain lo toh yahan change kar dena (ya NEXT_PUBLIC_SITE_URL env variable set kar dena)
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://neulife-homeopath.vercel.app").replace(/\/$/, "");
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.neulifehomeo.in").replace(/\/$/, "");
 
 export const SITE_NAME = "Neulife Homoeopathy Clinic - Dr. A. Qadir Shaikh (M.D.)";
 

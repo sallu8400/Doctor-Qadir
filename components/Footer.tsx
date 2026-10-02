@@ -8,6 +8,8 @@ const Footer = () => {
   const whatsappNumber = "918082408887"; // Country code 91 ke sath
   const whatsappMessage = encodeURIComponent("Hello Dr. Qadir, I would like to book an appointment.");
 
+  const treatments = ["Chronic Diseases", "Skin & Hair Care", "Child Immunity", "Respiratory Issues", "Joint & Body Pain"];
+
   // Bina API key ke free Google Maps embed link - Google listing ke naam se search hota hai
   // taaki map par seedha "Neulife homoeopathy clinic" ka pin aaye
   const mapEmbedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(
@@ -29,7 +31,7 @@ const Footer = () => {
               <div className="about-footer">
                 {/* Footer Logo Start */}
                 <div className="footer-logo">
-                  <img src="/images/homopath-remove-bg.png" alt="Neulife Homoeopathy Clinic Logo" loading="lazy" />
+                  <img src="/images/neulife-logo-footer.webp" alt="Neulife Homoeopathy Clinic Logo" loading="lazy" />
                 </div>
                 {/* Footer Logo End */}
 
@@ -46,12 +48,21 @@ const Footer = () => {
               {/* Footer Links Start */}
               <div className="footer-links">
                 <h3>Our Treatments</h3>
+                {/* Treatment pages ban jayein toh in links ko un pages par point kar dena */}
                 <ul>
-                  <li><a href="#">Chronic Diseases</a></li>
-                  <li><a href="#">Skin & Hair Care</a></li>
-                  <li><a href="#">Child Immunity</a></li>
-                  <li><a href="#">Respiratory Issues</a></li>
-                  <li><a href="#">Joint & Body Pain</a></li>
+                  {treatments.map((treatment) => (
+                    <li key={treatment}>
+                      <a
+                        href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+                          `Hello Dr. Qadir, I would like to book an appointment for ${treatment} treatment.`
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {treatment}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </div>
               {/* Footer Links End */}
@@ -135,9 +146,10 @@ const Footer = () => {
               <div className="footer-social-link">
                 <hr />
                 <ul>
-                  <li><a href="#"><i className="fa-brands fa-facebook-f"></i></a></li>
-                  <li><a href="#"><i className="fa-brands fa-instagram"></i></a></li>
-                  <li><a href="#"><i className="fa-brands fa-youtube"></i></a></li>
+                  {/* Facebook / Instagram / YouTube page ban jaye toh yahan unke links laga dena */}
+                  <li><a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i className="fa-brands fa-whatsapp"></i></a></li>
+                  <li><a href="tel:+918082408887" aria-label="Call clinic"><i className="fa-solid fa-phone"></i></a></li>
+                  <li><a href="mailto:qadir1197@gmail.com" aria-label="Email clinic"><i className="fa-solid fa-envelope"></i></a></li>
                 </ul>
                 <hr />
               </div>
@@ -157,8 +169,8 @@ const Footer = () => {
               <div className="col-md-6">
                 <div className="footer-terms-condition">
                   <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="/#faqs">FAQs</a></li>
+                    <li><a href="/#contact">Contact Us</a></li>
                   </ul>
                 </div>
               </div>

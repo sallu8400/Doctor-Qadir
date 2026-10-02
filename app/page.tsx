@@ -62,10 +62,10 @@ export default function Home() {
      
       {/* Hero Section Start */}
    <div className="hero hero-bg-image hero-video bg-section">
-        {/* Background Video Start (Bina sound wala, pehle jaisa) */}
+        {/* Background Video Start - 20 sec ka chhota bina sound wala loop (0.45MB), taaki page fast khule */}
         <div className="hero-bg-video">
-          <video autoPlay muted loop id="myVideo">
-            <source src="video.mp4" type="video/mp4" />
+          <video autoPlay muted loop playsInline preload="auto" poster="/img/hero-poster.jpg" id="myVideo">
+            <source src="/hero-bg.mp4" type="video/mp4" />
           </video>
         </div>
         {/* Background Video End */}
@@ -149,8 +149,8 @@ export default function Home() {
             </button>
             
             {/* Yahan se width="100%" hata diya hai, ab CSS height handle karegi */}
-            <video autoPlay controls>
-              <source src="video.mp4" type="video/mp4" />
+            <video autoPlay controls playsInline>
+              <source src="/clinic-video.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -278,162 +278,7 @@ export default function Home() {
 </div>
       {/* About Us Section End */}
 
-      {/* Our Service Section Start */}
-      <div className="our-services bg-section hidden">
-        <div className="container">
-          <div className="row section-row align-items-center">
-            <div className="col-lg-12">
-              {/* Section Title Start */}
-              <div className="section-title">
-                <h3 className="wow fadeInUp">our services</h3>
-                <h2 className="text-anime-style-3" data-cursor="-opaque">Comprehensive services for your health</h2>
-              </div>
-              {/* Section Title End */}
-            </div>
-          </div>
-
-          <div className="row align-items-center">
-            <div className="col-lg-4 col-md-6">
-              {/* Service Item Start */}
-              <div className="service-item wow fadeInUp">
-                {/* Service Header Start */}
-                <div className="service-header">
-                  {/* Service Item Box Start */}
-                  <div className="service-item-box">
-                    <div className="icon-box">
-                      <img src="/images/icon-service-1.svg" alt="" />
-                    </div>
-                    <div className="service-item-content">
-                      <h3>urology</h3>
-                    </div>
-                  </div>
-                  {/* Service Item Box End */}
-
-                  {/* Service Readmore Start */}
-                  <div className="service-readmore">
-                    <a href="service-single.html"><img src="/images/arrow-dark.svg" alt="" /></a>
-                  </div>
-                  {/* Service Readmore End */}
-                </div>
-                {/* Service Header End */}
-
-                {/* Service Body Start */}
-                <div className="service-body">
-                  <p>Our neurology department provides expert care for conditions affecting the brain, spine, and nervous system</p>
-                </div>
-                {/* Service Body End */}
-
-                {/* Service Image Start */}
-                <div className="service-image">
-                  <a href="service-single.html" data-cursor-text="View">
-                    <figure className="image-anime">
-                      <img src="/images/service-img-1.jpg" alt="" />
-                    </figure>
-                  </a>
-                </div>
-                {/* Service Image End */}
-              </div>
-              {/* Service Item End */}
-            </div>
-
-            <div className="col-lg-4 col-md-6">
-              {/* Service Item Start */}
-              <div className="service-item wow fadeInUp" data-wow-delay="0.25s">
-                {/* Service Header Start */}
-                <div className="service-header">
-                  {/* Service Item Box Start */}
-                  <div className="service-item-box">
-                    <div className="icon-box">
-                      <img src="/images/icon-service-2.svg" alt="" />
-                    </div>
-                    <div className="service-item-content">
-                      <h3>neurology</h3>
-                    </div>
-                  </div>
-                  {/* Service Item Box End */}
-
-                  {/* Service Readmore Start */}
-                  <div className="service-readmore">
-                    <a href="service-single.html"><img src="/images/arrow-dark.svg" alt="" /></a>
-                  </div>
-                  {/* Service Readmore End */}
-                </div>
-                {/* Service Header End */}
-
-                {/* Service Body Start */}
-                <div className="service-body">
-                  <p>Our neurology department provides expert care for conditions affecting the brain, spine, and nervous system</p>
-                </div>
-                {/* Service Body End */}
-
-                {/* Service Image Start */}
-                <div className="service-image">
-                  <a href="service-single.html" data-cursor-text="View">
-                    <figure className="image-anime">
-                      <img src="/images/service-img-2.jpg" alt="" />
-                    </figure>
-                  </a>
-                </div>
-                {/* Service Image End */}
-              </div>
-              {/* Service Item End */}
-            </div>
-
-            <div className="col-lg-4 col-md-6">
-              {/* Service Item Start */}
-              <div className="service-item wow fadeInUp" data-wow-delay="0.5s">
-                {/* Service Header Start */}
-                <div className="service-header">
-                  {/* Service Item Box Start */}
-                  <div className="service-item-box">
-                    <div className="icon-box">
-                      <img src="/images/icon-service-3.svg" alt="" />
-                    </div>
-                    <div className="service-item-content">
-                      <h3>eye care</h3>
-                    </div>
-                  </div>
-                  {/* Service Item Box End */}
-
-                  {/* Service Readmore Start */}
-                  <div className="service-readmore">
-                    <a href="service-single.html"><img src="/images/arrow-dark.svg" alt="" /></a>
-                  </div>
-                  {/* Service Readmore End */}
-                </div>
-                {/* Service Header End */}
-
-                {/* Service Body Start */}
-                <div className="service-body">
-                  <p>Our neurology department provides expert care for conditions affecting the brain, spine, and nervous system</p>
-                </div>
-                {/* Service Body End */}
-
-                {/* Service Image Start */}
-                <div className="service-image">
-                  <a href="service-single.html" data-cursor-text="View">
-                    <figure className="image-anime">
-                      <img src="/images/service-img-3.jpg" alt="" />
-                    </figure>
-                  </a>
-                </div>
-                {/* Service Image End */}
-              </div>
-              {/* Service Item End */}
-            </div>
-
-            <div className="col-lg-12">
-              {/* More Services Content Start */}
-              <div className="more-service-content">
-                <p className="wow fadeInUp" data-wow-delay="0.25s">From preventive care to specialized treatments, our wide range of services is designed to support your health at every stage.</p>
-                <a href="services.html" className="btn-default wow fadeInUp" data-wow-delay="0.5s">view all services</a>
-              </div>
-              {/* More Services Content End */}
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Our Service Section End */}
+      
 
       {/* Intro Video Section Start */}
       <div className="intro-video" id="why-choose-us">
@@ -467,125 +312,13 @@ export default function Home() {
     </div>
   </div>
 
-          <div className="row hidden">
-            <div className="col-lg-12 hidden">
-              {/* Intro Video Image Start */}
-              <div className="intro-video-box ">
-                {/* Intro Image Start */}
-                <div className="intro-video-image">
-                  <figure>
-                    <img src="/images/intro-video-bg.jpg" alt="" />
-                  </figure>
-                </div>
-                {/* Intro Image End */}
-
-                {/* Video Play Button Start */}
-                <div className="video-play-button">
-                  <a href="https://www.youtube.com/watch?v=74DWwSxsVSs" className="popup-video" data-cursor-text="Play">
-                    <img src="/images/icon-play.svg" alt="" />
-                  </a>
-                </div>
-                {/* Video Play Button End */}
-
-                <div className="why-choose-box">
-                  {/* Why Choose Item Start */}
-                  <div className="why-choose-item wow fadeInUp">
-                    <div className="icon-box">
-                      <img src="/images/icon-why-choose-1.svg" alt="" />
-                    </div>
-                    <div className="why-choose-item-content">
-                      <h3>50+ Expert Doctor</h3>
-                      <p>Our team includes over 50 highly skilled doctors.</p>
-                    </div>
-                  </div>
-                  {/* Why Choose Item End */}
-
-                  {/* Why Choose Item Start */}
-                  <div className="why-choose-item wow fadeInUp" data-wow-delay="0.25s">
-                    <div className="icon-box">
-                      <img src="/images/icon-why-choose-2.svg" alt="" />
-                    </div>
-                    <div className="why-choose-item-content">
-                      <h3>24/7 Instant Support</h3>
-                      <p>Our team includes over 50 highly skilled doctors.</p>
-                    </div>
-                  </div>
-                  {/* Why Choose Item End */}
-
-                  {/* Why Choose Item Start */}
-                  <div className="why-choose-item wow fadeInUp" data-wow-delay="0.5s">
-                    <div className="icon-box">
-                      <img src="/images/icon-why-choose-3.svg" alt="" />
-                    </div>
-                    <div className="why-choose-item-content">
-                      <h3>Expert Medical Team</h3>
-                      <p>Our team includes over 50 highly skilled doctors.</p>
-                    </div>
-                  </div>
-                  {/* Why Choose Item End */}
-                </div>
-              </div>
-              {/* Intro Video Btn End */}
-            </div>
-          </div>
+          
         </div>
       </div>
 
  
 
-      {/* Our Excellence Section Start */}
-      <div className="our-excellence hidden">
-        <div className="container">
-          <div className="row section-row align-items-center">
-            <div className="col-lg-12">
-              {/* Section Title Start */}
-              <div className="section-title">
-                <h3 className="wow fadeInUp">our numbers</h3>
-                <h2 className="text-anime-style-3" data-cursor="-opaque">By the numbers: excellence in health</h2>
-                <p className="wow fadeInUp" data-wow-delay="0.25s">Excellence in healthcare is our standard, and our numbers back it up. From patient satisfaction rates to successful treatment outcomes.</p>
-              </div>
-              {/* Section Title End */}
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="col-lg-12">
-              {/* Excellence Counter Box Start */}
-              <div className="excellence-counter-boxes">
-                {/* Excellence Counter Item Start */}
-                <div className="excellence-counter-item">
-                  <h2><span className="counter">85</span>%</h2>
-                  <p>Of our members start with moderate to serve symptom</p>
-                </div>
-                {/* Excellence Counter Item End */}
-
-                {/* Excellence Counter Item Start */}
-                <div className="excellence-counter-item">
-                  <h2><span className="counter">72</span>%</h2>
-                  <p>Of our members start with moderate to serve symptom</p>
-                </div>
-                {/* Excellence Counter Item End */}
-
-                {/* Excellence Counter Item Start */}
-                <div className="excellence-counter-item">
-                  <h2><span className="counter">95</span>%</h2>
-                  <p>Of our members start with moderate to serve symptom</p>
-                </div>
-                {/* Excellence Counter Item End */}
-
-                {/* Excellence Counter Item Start */}
-                <div className="excellence-counter-item">
-                  <h2><span className="counter">76</span>%</h2>
-                  <p>Of our members start with moderate to serve symptom</p>
-                </div>
-                {/* Excellence Counter Item End */}
-              </div>
-              {/* Excellence Counter Box End */}
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Our Excellence Section End */}
+      
 
       {/* Our Faqs Section Start */}
    <div className="our-faqs bg-section" id="faqs" style={{ background: "white" }}>
@@ -659,107 +392,7 @@ export default function Home() {
       {/* Our Faqs Section End */}
 
 
-      <div className="our-health hidden">
-        <div className="container">
-          <div className="row section-row align-items-center">
-            <div className="col-lg-12">
-              {/* Section Title Start */}
-              <div className="section-title">
-                <h3 className="wow fadeInUp">our numbers</h3>
-                <h2 className="text-anime-style-3" data-cursor="-opaque">Health is wealth, and the medical field</h2>
-                <p className="wow fadeInUp" data-wow-delay="0.25s">Excellence in healthcare is our standard, and our numbers back it up. From patient satisfaction rates to successful treatment outcomes.</p>
-              </div>
-              {/* Section Title End */}
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="col-lg-12">
-              {/* Our Health Boxes Start */}
-              <div className="our-health-boxes">
-                {/* Our Health Item Start */}
-                <div className="our-health-item health-box-1">
-                  <div className="health-item-content">
-                    <img src="/images/icon-health-item-1.svg" alt="" />
-                    <h3>Your Health, Our Priority in Wellcare</h3>
-                    <a href="#" className="btn-default">read more</a>
-                  </div>
-                  <div className="health-item-image">
-                    <img src="/images/health-item-img-1.png" alt="" />
-                  </div>
-                </div>
-                {/* Our Health Item End */}
-
-                {/* Our Health Item Start */}
-                <div className="our-health-image health-box-2">
-                  <figure className="image-anime reveal">
-                    <img src="/images/health-item-img-2.jpg" alt="" />
-                  </figure>
-                </div>
-                {/* Our Health Item End */}
-
-                {/* Our Health Item Start */}
-                <div className="our-health-image health-box-3">
-                  <figure className="image-anime reveal">
-                    <img src="/images/health-item-img-3.jpg" alt="" />
-                  </figure>
-                </div>
-                {/* Our Health Item End */}
-
-                {/* Our Health Item Start */}
-                <div className="our-health-item health-box-4">
-                  <div className="health-item-content">
-                    <img src="/images/icon-health-item-2.svg" alt="" />
-                    <h3><span className="counter">58</span>M+ Happy Clients</h3>
-                  </div>
-                  <div className="happy-client-images">
-                    <div className="happy-client-img">
-                      <figure className="image-anime reveal">
-                        <img src="/images/happy-client-img-1.jpg" alt="" />
-                      </figure>
-                    </div>
-                    <div className="happy-client-img">
-                      <figure className="image-anime reveal">
-                        <img src="/images/happy-client-img-2.jpg" alt="" />
-                      </figure>
-                    </div>
-                    <div className="happy-client-img">
-                      <figure className="image-anime reveal">
-                        <img src="/images/happy-client-img-3.jpg" alt="" />
-                      </figure>
-                    </div>
-                    <div className="happy-client-img">
-                      <figure className="image-anime reveal">
-                        <img src="/images/happy-client-img-4.jpg" alt="" />
-                      </figure>
-                    </div>
-                    <div className="happy-client-img add-more">
-                      <figure>
-                        <a href="#"><i className="fa-solid fa-plus"></i></a>
-                      </figure>
-                    </div>
-                  </div>
-                </div>
-                {/* Our Health Item End */}
-
-                {/* Our Health Item Start */}
-                <div className="our-health-item health-box-5">
-                  <div className="health-item-content">
-                    <h3>Healing Starts Here Caring for You Always</h3>
-                    <a href="#" className="learn-btn">learn more</a>
-                  </div>
-                  <div className="health-item-image">
-                    <img src="/images/health-item-img-4.png" alt="" />
-                  </div>
-                </div>
-                {/* Our Health Item End */}
-              </div>
-              {/* Our Health Boxes End */}
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Our Health Section End */}
+      
 
       {/* CTA Section Start */}
       <div className="cta-section bg-section">
@@ -770,7 +403,7 @@ export default function Home() {
     {/* CTA Box img 1 Start */}
     <div className="cta-img-1 d-flex justify-content-center justify-content-md-start">
       {/* className="img-fluid" add kiya hai responsive ke liye */}
-      <img src="/img/6.png" alt="Book homeopathy treatment with Dr. A. Qadir Shaikh in Jogeshwari West" className="img-fluid" loading="lazy" />
+      <img src="/img/book-appointment.webp" alt="Book homeopathy treatment with Dr. A. Qadir Shaikh in Jogeshwari West" className="img-fluid" loading="lazy" />
     </div>
     {/* CTA Box img 1 End */}
   </div>
