@@ -50,8 +50,10 @@ export const metadata: Metadata = {
   authors: [{ name: CLINIC.doctor }],
   alternates: { canonical: '/' },
   robots: { index: true, follow: true },
-  // Google Search Console ownership verification
-  verification: { google: '8NI5JQKo3iUvTdl4yS2ieMxpmZlQKptNwyvM-x7Z5W4' },
+  // Google Search Console ownership verification (vercel.app wali property + neulifehomeo.in wali property)
+  verification: {
+    google: ['8NI5JQKo3iUvTdl4yS2ieMxpmZlQKptNwyvM-x7Z5W4', 'CTv1ZGIZWTr8tBRHnUD6buT4smGE9Q4MIo2xjzj5KZA'],
+  },
   openGraph: {
     type: 'website',
     locale: 'en_IN',
