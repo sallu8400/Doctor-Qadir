@@ -50,6 +50,8 @@ export const metadata: Metadata = {
   authors: [{ name: CLINIC.doctor }],
   alternates: { canonical: '/' },
   robots: { index: true, follow: true },
+  // Google Search Console ownership verification
+  verification: { google: '8NI5JQKo3iUvTdl4yS2ieMxpmZlQKptNwyvM-x7Z5W4' },
   openGraph: {
     type: 'website',
     locale: 'en_IN',
