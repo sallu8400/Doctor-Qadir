@@ -98,7 +98,17 @@ const clinicSchema = {
     addressCountry: CLINIC.country,
   },
   hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CLINIC.mapQuery)}`,
-  areaServed: ['Jogeshwari West', 'Jogeshwari East', 'Andheri West', 'Goregaon', 'Mumbai'],
+  areaServed: ['Jogeshwari West', 'Jogeshwari East', 'Behram Baug', 'Oshiwara', 'Andheri West', 'Lokhandwala', 'Goregaon', 'Mumbai'],
+  availableService: [
+    'Homeopathy for skin problems (eczema, psoriasis, acne)',
+    'Homeopathy for hair fall and dandruff',
+    'Homeopathy for allergy, sinusitis and asthma',
+    'Homeopathy for migraine and headache',
+    'Homeopathy for child immunity',
+    'Homeopathy for joint pain and arthritis',
+    'Homeopathy for chronic diseases',
+    'Online homeopathy video consultation',
+  ].map((name) => ({ '@type': 'MedicalTherapy', name })),
   openingHoursSpecification: [{
     '@type': 'OpeningHoursSpecification',
     dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],

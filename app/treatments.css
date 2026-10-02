@@ -1,0 +1,85 @@
+/* =========================================================
+   CONDITIONS WE TREAT + AREAS WE SERVE section
+   ========================================================= */
+
+.our-treatments {
+  padding: 0 0 100px;
+}
+
+.treatment-card {
+  height: 100%;
+  background-color: var(--white-color);
+  border: 1px solid rgba(11, 16, 48, 0.08);
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: 0 6px 24px rgba(11, 16, 48, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.treatment-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(11, 16, 48, 0.12);
+}
+
+.treatment-card .icon-box {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  color: var(--white-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.treatment-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.treatment-card p {
+  margin: 0;
+}
+
+.areas-we-serve {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.areas-we-serve h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.areas-we-serve ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.areas-we-serve ul li {
+  padding: 8px 18px;
+  border-radius: 30px;
+  background-color: var(--secondary-color);
+  font-weight: 500;
+}
+
+.areas-we-serve p {
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .our-treatments {
+    padding: 0 0 60px;
+  }
+
+  .treatment-card {
+    padding: 24px;
+  }
+}

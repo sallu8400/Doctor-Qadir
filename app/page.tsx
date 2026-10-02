@@ -1,6 +1,62 @@
 'use client'; 
 
 import React, { useState } from 'react';
+import './treatments.css';
+
+// "Conditions We Treat" section ka data
+const treatments = [
+  {
+    icon: "fa-solid fa-hand-dots",
+    title: "Skin Problems",
+    text: "Homeopathic treatment for eczema, psoriasis, acne, pimples, fungal infections and skin allergies, without steroid creams.",
+  },
+  {
+    icon: "fa-solid fa-user",
+    title: "Hair Fall & Dandruff",
+    text: "Natural homeopathy for hair fall, thinning hair, dandruff and alopecia, focused on the internal cause of hair loss.",
+  },
+  {
+    icon: "fa-solid fa-lungs",
+    title: "Allergy & Respiratory Issues",
+    text: "Relief from sneezing, sinusitis, allergic rhinitis, recurring cold, cough and asthma-related breathing problems.",
+  },
+  {
+    icon: "fa-solid fa-head-side-virus",
+    title: "Migraine & Headache",
+    text: "Personalised homeopathic remedies to reduce the frequency and intensity of migraine and chronic headaches.",
+  },
+  {
+    icon: "fa-solid fa-child",
+    title: "Child Immunity",
+    text: "Gentle, sweet homeopathic pills for children with frequent cold, cough, tonsillitis and low immunity.",
+  },
+  {
+    icon: "fa-solid fa-bone",
+    title: "Joint & Body Pain",
+    text: "Homeopathy for arthritis, knee pain, back pain, neck pain and other long-standing joint problems.",
+  },
+  {
+    icon: "fa-solid fa-heart-pulse",
+    title: "Chronic Diseases",
+    text: "Root-cause homeopathic treatment for long-term health problems, alongside your regular medical care.",
+  },
+  {
+    icon: "fa-solid fa-video",
+    title: "Online Video Consultation",
+    text: "Consult Dr. A. Qadir Shaikh online from anywhere in India and get homeopathic medicines with proper guidance.",
+  },
+];
+
+const areasServed = [
+  "Jogeshwari West",
+  "Jogeshwari East",
+  "Behram Baug",
+  "Kajupada",
+  "Oshiwara",
+  "Andheri West",
+  "Lokhandwala",
+  "Goregaon",
+];
 
 // FAQ ka data - accordion aur Google FAQ schema dono isi se bante hain
 const faqs = [
@@ -27,6 +83,18 @@ const faqs = [
   {
     question: "How do I schedule an appointment with Dr. Qadir Shaikh?",
     answer: "You can easily book an appointment by calling our clinic helpline, sending us a message on WhatsApp, or using the 'Book Appointment' button on our website. We offer both in-clinic visits at Jogeshwari West, Mumbai and online video consultations.",
+  },
+  {
+    question: "Where is Neulife Homoeopathy Clinic located?",
+    answer: "Neulife Homoeopathy Clinic is located at Range Height Tower, 102, New Link Road, opposite Kajupada, Behram Baug, Jogeshwari West, Mumbai, Maharashtra 400102. It is easy to reach from Jogeshwari, Oshiwara, Andheri West, Lokhandwala and Goregaon.",
+  },
+  {
+    question: "Which diseases are treated with homeopathy at your clinic?",
+    answer: "Dr. A. Qadir Shaikh treats skin problems like eczema, psoriasis and acne, hair fall and dandruff, allergies, sinusitis, recurring cold and cough, migraine, low immunity in children, joint pain, arthritis and many other chronic health problems with homeopathy.",
+  },
+  {
+    question: "Do you offer online homeopathy consultation?",
+    answer: "Yes. If you cannot visit our Jogeshwari West clinic, you can book an online video consultation with Dr. A. Qadir Shaikh from anywhere in India. Just message us on WhatsApp at +91 80824 08887 to book a slot.",
   },
 ];
 
@@ -315,10 +383,54 @@ export default function Home() {
           
         </div>
       </div>
+      {/* Intro Video Section End */}
 
- 
+      {/* Conditions We Treat Section Start */}
+      <div className="our-treatments" id="treatments">
+        <div className="container">
+          <div className="row section-row">
+            <div className="col-lg-12">
+              <div className="section-title">
+                <h3 className="wow fadeInUp">conditions we treat</h3>
+                <h2 className="text-anime-style-3" data-cursor="-opaque">
+                  Homeopathy treatment in Jogeshwari West, Mumbai
+                </h2>
+                <p className="wow fadeInUp" data-wow-delay="0.25s">
+                  At Neulife Homoeopathy Clinic, Dr. A. Qadir Shaikh (M.D.) treats acute and chronic health problems with personalised homeopathic medicine, for children and adults alike.
+                </p>
+              </div>
+            </div>
+          </div>
 
-      
+          <div className="row g-4">
+            {treatments.map((treatment, i) => (
+              <div className="col-lg-3 col-md-6" key={treatment.title}>
+                <div className="treatment-card wow fadeInUp" data-wow-delay={`${(i % 4) * 0.2}s`}>
+                  <div className="icon-box">
+                    <i className={treatment.icon}></i>
+                  </div>
+                  <h3>{treatment.title}</h3>
+                  <p>{treatment.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Areas We Serve - local search ke liye */}
+          <div className="areas-we-serve wow fadeInUp">
+            <h3>Homeopathy clinic near you</h3>
+            <ul>
+              {areasServed.map((area) => (
+                <li key={area}>{area}</li>
+              ))}
+            </ul>
+            <p>
+              Our clinic is at Range Height Tower, opp. Kajupada, Jogeshwari West. Patients from anywhere in India can also book an online video consultation.
+            </p>
+          </div>
+        </div>
+      </div>
+      {/* Conditions We Treat Section End */}
 
       {/* Our Faqs Section Start */}
    <div className="our-faqs bg-section" id="faqs" style={{ background: "white" }}>

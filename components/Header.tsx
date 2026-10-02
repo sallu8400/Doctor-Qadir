@@ -57,7 +57,7 @@ const Header = () => {
                       </ul> */}
                     </li>
                     <li className="nav-item"><a className="nav-link" href="/#about">About Us</a></li>
-                    <li className="nav-item"><a className="nav-link" href="/#why-choose-us">Services</a></li>
+                    <li className="nav-item"><a className="nav-link" href="/#treatments">Services</a></li>
                     <li className="nav-item"><a className="nav-link" href="/#contact">Contact Us</a></li>
 <li className="nav-item highlighted-menu">
   <a 
