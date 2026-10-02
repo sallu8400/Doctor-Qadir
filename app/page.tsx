@@ -47,17 +47,6 @@ const treatments = [
   },
 ];
 
-const areasServed = [
-  "Jogeshwari West",
-  "Jogeshwari East",
-  "Behram Baug",
-  "Kajupada",
-  "Oshiwara",
-  "Andheri West",
-  "Lokhandwala",
-  "Goregaon",
-];
-
 // FAQ ka data - accordion aur Google FAQ schema dono isi se bante hain
 const faqs = [
   {
@@ -414,19 +403,6 @@ export default function Home() {
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Areas We Serve - local search ke liye */}
-          <div className="areas-we-serve wow fadeInUp">
-            <h3>Homeopathy clinic near you</h3>
-            <ul>
-              {areasServed.map((area) => (
-                <li key={area}>{area}</li>
-              ))}
-            </ul>
-            <p>
-              Our clinic is at Range Height Tower, opp. Kajupada, Jogeshwari West. Patients from anywhere in India can also book an online video consultation.
-            </p>
           </div>
         </div>
       </div>

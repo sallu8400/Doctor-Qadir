@@ -1,5 +1,5 @@
 /* =========================================================
-   CONDITIONS WE TREAT + AREAS WE SERVE section
+   CONDITIONS WE TREAT section
    ========================================================= */
 
 .our-treatments {
@@ -40,37 +40,6 @@
 }
 
 .treatment-card p {
-  margin: 0;
-}
-
-.areas-we-serve {
-  margin-top: 60px;
-  text-align: center;
-}
-
-.areas-we-serve h3 {
-  font-size: 22px;
-  margin-bottom: 20px;
-}
-
-.areas-we-serve ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-
-.areas-we-serve ul li {
-  padding: 8px 18px;
-  border-radius: 30px;
-  background-color: var(--secondary-color);
-  font-weight: 500;
-}
-
-.areas-we-serve p {
   margin: 0;
 }
 
