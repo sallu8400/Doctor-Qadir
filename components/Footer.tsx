@@ -2,14 +2,12 @@ import React from 'react';
 // Apni CSS file import kar lena (jaise './Footer.css' ya jo bhi aap use kar rahe ho)
 import "./footer.css";
 import { CLINIC } from "../lib/site";
+import { treatments } from "../lib/treatments";
 
 const Footer = () => {
   // WhatsApp par connect karne ke liye number aur message
   const whatsappNumber = "918082408887"; // Country code 91 ke sath
   const whatsappMessage = encodeURIComponent("Hello Dr. Qadir, I would like to book an appointment.");
-
-  const treatments = ["Chronic Diseases", "Skin & Hair Care", "Child Immunity", "Respiratory Issues", "Joint & Body Pain"];
-
   // Bina API key ke free Google Maps embed link - Google listing ke naam se search hota hai
   // taaki map par seedha "Neulife homoeopathy clinic" ka pin aaye
   const mapEmbedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(
@@ -48,21 +46,13 @@ const Footer = () => {
               {/* Footer Links Start */}
               <div className="footer-links">
                 <h3>Our Treatments</h3>
-                {/* Treatment pages ban jayein toh in links ko un pages par point kar dena */}
                 <ul>
-                  {treatments.map((treatment) => (
-                    <li key={treatment}>
-                      <a
-                        href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-                          `Hello Dr. Qadir, I would like to book an appointment for ${treatment} treatment.`
-                        )}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {treatment}
-                      </a>
+                  {treatments.slice(0, 6).map((treatment) => (
+                    <li key={treatment.slug}>
+                      <a href={`/treatments/${treatment.slug}`}>{treatment.title}</a>
                     </li>
                   ))}
+                  <li><a href="/treatments">All Treatments</a></li>
                 </ul>
               </div>
               {/* Footer Links End */}
@@ -169,8 +159,8 @@ const Footer = () => {
               <div className="col-md-6">
                 <div className="footer-terms-condition">
                   <ul>
-                    <li><a href="/#faqs">FAQs</a></li>
-                    <li><a href="/#contact">Contact Us</a></li>
+                    <li><a href="/about-dr-qadir-shaikh">About Doctor</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
                   </ul>
                 </div>
               </div>

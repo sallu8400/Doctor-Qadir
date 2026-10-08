@@ -2,50 +2,8 @@
 
 import React, { useState } from 'react';
 import './treatments.css';
-
-// "Conditions We Treat" section ka data
-const treatments = [
-  {
-    icon: "fa-solid fa-hand-dots",
-    title: "Skin Problems",
-    text: "Homeopathic treatment for eczema, psoriasis, acne, pimples, fungal infections and skin allergies, without steroid creams.",
-  },
-  {
-    icon: "fa-solid fa-user",
-    title: "Hair Fall & Dandruff",
-    text: "Natural homeopathy for hair fall, thinning hair, dandruff and alopecia, focused on the internal cause of hair loss.",
-  },
-  {
-    icon: "fa-solid fa-lungs",
-    title: "Allergy & Respiratory Issues",
-    text: "Relief from sneezing, sinusitis, allergic rhinitis, recurring cold, cough and asthma-related breathing problems.",
-  },
-  {
-    icon: "fa-solid fa-head-side-virus",
-    title: "Migraine & Headache",
-    text: "Personalised homeopathic remedies to reduce the frequency and intensity of migraine and chronic headaches.",
-  },
-  {
-    icon: "fa-solid fa-child",
-    title: "Child Immunity",
-    text: "Gentle, sweet homeopathic pills for children with frequent cold, cough, tonsillitis and low immunity.",
-  },
-  {
-    icon: "fa-solid fa-bone",
-    title: "Joint & Body Pain",
-    text: "Homeopathy for arthritis, knee pain, back pain, neck pain and other long-standing joint problems.",
-  },
-  {
-    icon: "fa-solid fa-heart-pulse",
-    title: "Chronic Diseases",
-    text: "Root-cause homeopathic treatment for long-term health problems, alongside your regular medical care.",
-  },
-  {
-    icon: "fa-solid fa-video",
-    title: "Online Video Consultation",
-    text: "Consult Dr. A. Qadir Shaikh online from anywhere in India and get homeopathic medicines with proper guidance.",
-  },
-];
+// Treatments ka data lib/treatments.ts me hai - wahi treatment pages bhi banata hai
+import { treatments } from '../lib/treatments';
 
 // FAQ ka data - accordion aur Google FAQ schema dono isi se bante hain
 const faqs = [
@@ -276,7 +234,7 @@ export default function Home() {
 
             {/* About Us Button Start */}
             <div className="about-us-btn wow fadeInUp" data-wow-delay="0.75s">
-              <a href="#faqs" className="btn-default">Learn more about us</a>
+              <a href="/about-dr-qadir-shaikh" className="btn-default">Learn more about Dr. Qadir</a>
             </div>
             {/* About Us Button End */}
           </div>
@@ -385,7 +343,7 @@ export default function Home() {
                   Homeopathy treatment in Jogeshwari West, Mumbai
                 </h2>
                 <p className="wow fadeInUp" data-wow-delay="0.25s">
-                  At Neulife Homoeopathy Clinic, Dr. A. Qadir Shaikh (M.D.) treats acute and chronic health problems with personalised homeopathic medicine, for children and adults alike.
+                  At Neulife Homoeopathy Clinic, Dr. A. Qadir Shaikh (BHMS, MD) treats acute and chronic health problems with personalised homeopathic medicine, for children and adults alike.
                 </p>
               </div>
             </div>
@@ -393,16 +351,21 @@ export default function Home() {
 
           <div className="row g-4">
             {treatments.map((treatment, i) => (
-              <div className="col-lg-3 col-md-6" key={treatment.title}>
-                <div className="treatment-card wow fadeInUp" data-wow-delay={`${(i % 4) * 0.2}s`}>
+              <div className="col-lg-4 col-md-6" key={treatment.slug}>
+                <a href={`/treatments/${treatment.slug}`} className="treatment-card wow fadeInUp" data-wow-delay={`${(i % 3) * 0.2}s`}>
                   <div className="icon-box">
                     <i className={treatment.icon}></i>
                   </div>
                   <h3>{treatment.title}</h3>
-                  <p>{treatment.text}</p>
-                </div>
+                  <p>{treatment.summary}</p>
+                  <span className="read-more">Read more →</span>
+                </a>
               </div>
             ))}
+          </div>
+
+          <div className="text-center" style={{ marginTop: '40px' }}>
+            <a href="/treatments" className="btn-default">View all treatments</a>
           </div>
         </div>
       </div>

@@ -56,9 +56,9 @@ const Header = () => {
                         <li className="nav-item"><a className="nav-link" href="index-video.html">Home - Video</a></li>
                       </ul> */}
                     </li>
-                    <li className="nav-item"><a className="nav-link" href="/#about">About Us</a></li>
-                    <li className="nav-item"><a className="nav-link" href="/#treatments">Services</a></li>
-                    <li className="nav-item"><a className="nav-link" href="/#contact">Contact Us</a></li>
+                    <li className="nav-item"><a className="nav-link" href="/about-dr-qadir-shaikh">About Doctor</a></li>
+                    <li className="nav-item"><a className="nav-link" href="/treatments">Treatments</a></li>
+                    <li className="nav-item"><a className="nav-link" href="/contact">Contact Us</a></li>
 <li className="nav-item highlighted-menu">
   <a 
     className="nav-link" 

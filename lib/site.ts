@@ -56,9 +56,14 @@ export const SITE_KEYWORDS = [
   "video consultation homeopathy doctor",
 ];
 
+export const WHATSAPP_BOOKING_URL =
+  "https://wa.me/918082408887?text=Hello%20Dr.%20Qadir,%20I%20would%20like%20to%20book%20an%20appointment.";
+
 export const CLINIC = {
   name: "Neulife Homoeopathy Clinic",
   doctor: "Dr. A. Qadir Shaikh (M.D.)",
+  doctorFullName: "Dr. Shaikh Abdul Qadir",
+  qualification: "BHMS, MD (Homoeopathy)",
   phone: "+91-80824-08887",
   email: "qadir1197@gmail.com",
   streetAddress: "Range Height Tower, 102, New Link Rd, opp. Kajupada, Behram Baug",
